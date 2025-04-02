@@ -1,0 +1,44 @@
+/* static/css/components/card.css */
+.card {
+    border-radius: var(--radius);
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    box-shadow: var(--shadow-sm);
+    border: 1px solid hsl(var(--border));
+    overflow: hidden;
+  }
+  
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+  }
+  
+  .card-description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: hsl(var(--muted-foreground));
+    margin: 0;
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+  }
+  
+  .card-header + .card-content {
+    padding-top: 1rem;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    gap: 0.5rem;
+  }

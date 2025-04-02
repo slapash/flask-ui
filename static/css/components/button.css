@@ -1,0 +1,127 @@
+/* static/css/components/button.css */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    font-weight: 500;
+    transition: var(--transition-default);
+    cursor: pointer;
+    border: 1px solid transparent;
+    line-height: 1;
+    text-decoration: none;
+  }
+  
+  .button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .button:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(var(--ring));
+  }
+  
+  /* Size variants */
+  .button-sm {
+    height: 2rem;
+    padding: 0 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .button-default {
+    height: 2.5rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+  }
+  
+  .button-lg {
+    height: 3rem;
+    padding: 0 1.5rem;
+    font-size: 1.125rem;
+  }
+  
+  .button-icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: 0;
+  }
+  
+  /* Variant styles */
+  .button-default {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+  
+  .button-default:hover {
+    background-color: hsl(var(--primary) / 0.9);
+  }
+  
+  .button-secondary {
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+  }
+  
+  .button-secondary:hover {
+    background-color: hsl(var(--secondary) / 0.9);
+  }
+  
+  .button-outline {
+    background-color: transparent;
+    border-color: hsl(var(--border));
+    color: hsl(var(--foreground));
+  }
+  
+  .button-outline:hover {
+    background-color: hsl(var(--accent) / 0.1);
+    color: hsl(var(--accent));
+  }
+  
+  .button-ghost {
+    background-color: transparent;
+    color: hsl(var(--foreground));
+  }
+  
+  .button-ghost:hover {
+    background-color: hsl(var(--accent) / 0.1);
+    color: hsl(var(--accent));
+  }
+  
+  .button-link {
+    background-color: transparent;
+    color: hsl(var(--primary));
+    text-decoration: underline;
+    height: auto;
+    padding: 0;
+  }
+  
+  .button-link:hover {
+    text-decoration: none;
+  }
+  
+  .button-destructive {
+    background-color: hsl(var(--destructive));
+    color: hsl(var(--destructive-foreground));
+  }
+  
+  .button-destructive:hover {
+    background-color: hsl(var(--destructive) / 0.9);
+  }
+  
+  /* Icon positioning */
+  .button-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    height: 1em;
+  }
+  
+  .button-icon-left {
+    margin-right: 0.5rem;
+  }
+  
+  .button-icon-right {
+    margin-left: 0.5rem;
+  }
