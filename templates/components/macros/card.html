@@ -1,0 +1,36 @@
+{# components/macros/card.html #}
+{% macro card(class="", attrs={}) %}
+  <div class="card {{ class }}" {% for attr, value in attrs.items() %}{{ attr }}="{{ value }}"{% endfor %}>
+    {{ caller() if caller else "" }}
+  </div>
+{% endmacro %}
+
+{% macro card_header(class="", attrs={}) %}
+  <div class="card-header {{ class }}" {% for attr, value in attrs.items() %}{{ attr }}="{{ value }}"{% endfor %}>
+    {{ caller() if caller else "" }}
+  </div>
+{% endmacro %}
+
+{% macro card_title(text="", class="", attrs={}) %}
+  <h3 class="card-title {{ class }}" {% for attr, value in attrs.items() %}{{ attr }}="{{ value }}"{% endfor %}>
+    {{ text }}{{ caller() if caller else "" }}
+  </h3>
+{% endmacro %}
+
+{% macro card_description(text="", class="", attrs={}) %}
+  <p class="card-description {{ class }}" {% for attr, value in attrs.items() %}{{ attr }}="{{ value }}"{% endfor %}>
+    {{ text }}{{ caller() if caller else "" }}
+  </p>
+{% endmacro %}
+
+{% macro card_content(class="", attrs={}) %}
+  <div class="card-content {{ class }}" {% for attr, value in attrs.items() %}{{ attr }}="{{ value }}"{% endfor %}>
+    {{ caller() if caller else "" }}
+  </div>
+{% endmacro %}
+
+{% macro card_footer(class="", attrs={}) %}
+  <div class="card-footer {{ class }}" {% for attr, value in attrs.items() %}{{ attr }}="{{ value }}"{% endfor %}>
+    {{ caller() if caller else "" }}
+  </div>
+{% endmacro %}

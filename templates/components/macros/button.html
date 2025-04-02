@@ -1,0 +1,32 @@
+{# components/macros/button.html #}
+{% macro button(label="Button", variant="default", size="default", href=None, disabled=False, icon=None, iconPosition="left", class="", attrs={}) %}
+  {# Variants: default, primary, secondary, outline, ghost, link, destructive #}
+  {# Sizes: sm, default, lg, icon #}
+  
+  {% set baseClass = "button" %}
+  {% set variantClass = "button-" ~ variant %}
+  {% set sizeClass = "button-" ~ size %}
+  {% set className = baseClass ~ " " ~ variantClass ~ " " ~ sizeClass ~ " " ~ class %}
+  
+  {% if href and not disabled %}
+    <a href="{{ href }}" class="{{ className }}" {% for attr, value in attrs.items() %}{{ attr }}="{{ value }}"{% endfor %}>
+      {% if icon and iconPosition == "left" %}
+        <span class="button-icon button-icon-left">{{ icon | safe }}</span>
+      {% endif %}
+      <span class="button-label">{{ label }}</span>
+      {% if icon and iconPosition == "right" %}
+        <span class="button-icon button-icon-right">{{ icon | safe }}</span>
+      {% endif %}
+    </a>
+  {% else %}
+    <button class="{{ className }}" {% if disabled %}disabled{% endif %} {% for attr, value in attrs.items() %}{{ attr }}="{{ value }}"{% endfor %}>
+      {% if icon and iconPosition == "left" %}
+        <span class="button-icon button-icon-left">{{ icon | safe }}</span>
+      {% endif %}
+      <span class="button-label">{{ label }}</span>
+      {% if icon and iconPosition == "right" %}
+        <span class="button-icon button-icon-right">{{ icon | safe }}</span>
+      {% endif %}
+    </button>
+  {% endif %}
+{% endmacro %}

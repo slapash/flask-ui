@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block component_css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/card.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/button.css') }}">
+{% endblock %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  {% from "components/macros/card.html" import card, card_header, card_title, card_description, card_content, card_footer %}
+  {% from "components/macros/button.html" import button %}
+
+  <section class="mt-8">
+    <h2 class="text-xl font-bold mb-4">Welcome to Flask UI Components</h2>
+
+    {% call card(class="shadow-lg border border-border p-4") %}
+      {% call card_header(class="mb-2") %}
+        {{ card_title("Card Example", class="text-lg font-semibold") }}
+        {{ card_description("A simple card built with Jinja macros", class="text-sm text-muted-foreground") }}
+      {% endcall %}
+
+      {% call card_content() %}
+        <p>This card is fully modular. You can pass content, title, description, and even attributes dynamically.</p>
+        <ul class="mt-2 list-disc pl-5 text-sm">
+          <li>Reusable everywhere</li>
+          <li>Customizable classes & attributes</li>
+          <li>No extra JS needed</li>
+        </ul>
+      {% endcall %}
+
+      {% call card_footer(class="mt-4 flex justify-end") %}
+        {{ button(label='See Showcase', variant='primary', href=url_for('main.showcase')) }}
+      {% endcall %}
+    {% endcall %}
+  </section>
+{% endblock %}
